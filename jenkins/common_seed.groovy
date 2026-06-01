@@ -30,7 +30,7 @@ def jobName = "$reponame"
                         }
                     }
                 }
-                scriptPath("Jenkinsfile")
+                scriptPath("jenkinsfile")
             }
         }
     }
