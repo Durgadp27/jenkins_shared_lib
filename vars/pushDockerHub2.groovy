@@ -9,11 +9,6 @@ pipeline {
     dockerImage = ''
   }
   stages {
-   stage('get scm') {
-      steps {
-	  git branch: 'main', credentialsId: 'github_credentials', url: 'https://github.com/Durgadp27/${projectName}.git'
-       }
-    }
     stage('Building image') {
       steps{
         script {
