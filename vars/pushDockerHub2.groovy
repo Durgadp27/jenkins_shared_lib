@@ -4,11 +4,16 @@ def projectName = pipelineParams.ecrRepoName
 pipeline {
  agent any
   environment {
-    registry = "ybmsr/${projectName}"
+    registry = "dpdurgadp/${projectName}"
     registryCredential = 'dockerhub_credentials'
     dockerImage = ''
   }
   stages {
+   stage('get scm') {
+      steps {
+	  git branch: 'main', credentialsId: 'github_new_credentials', url: 'https://github.com/Durgadp27/${projectName}.git'
+       }
+    }
     stage('Building image') {
       steps{
         script {
